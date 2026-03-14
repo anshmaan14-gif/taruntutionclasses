@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tarun Classes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:Roboto;
+margin:0;
+background:linear-gradient(120deg,#2563EB,#60A5FA);
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:15px 8%;
+background:rgba(0,0,0,0.2);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{
+font-family:Montserrat;
+font-size:55px;
+}
+
+/* BUTTON */
+
+.button{
+padding:12px 25px;
+border:none;
+background:white;
+color:#2563EB;
+font-weight:bold;
+border-radius:6px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+.button:hover{
+transform:scale(1.05);
+}
+
+/* SECTIONS */
+
+.section{
+background:white;
+color:#333;
+padding:60px 10%;
+margin-top:30px;
+}
+
+/* LOGIN BOX */
+
+.box{
+background:#EFF6FF;
+padding:20px;
+border-radius:10px;
+max-width:400px;
+margin:auto;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+}
+
+.material{
+background:#e2e8f0;
+padding:10px;
+margin:10px 0;
+border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>Tarun Classes</h2>
+
+<div>
+<a href="#student">Student Corner</a>
+<a href="#teacher">Teacher Corner</a>
+</div>
+
+</nav>
+
+<div class="hero">
+
+<h1>Tarun Classes</h1>
+
+<p>Smart Learning Platform</p>
+
+<button class="button" onclick="scrollToStudent()">Student Login</button>
+<button class="button" onclick="scrollToTeacher()">Teacher Panel</button>
+
+</div>
+
+<!-- STUDENT CORNER -->
+
+<div class="section" id="student">
+
+<h2>Student Corner</h2>
+
+<div class="box">
+
+<input id="studentName" placeholder="Student Name">
+
+<input id="studentPass" type="password" placeholder="Password">
+
+<button class="button" onclick="studentLogin()">Login</button>
+
+</div>
+
+<div id="studentArea" style="display:none">
+
+<h3>Your Study Materials</h3>
+
+<div id="materials"></div>
+
+</div>
+
+</div>
+
+<!-- TEACHER CORNER -->
+
+<div class="section" id="teacher">
+
+<h2>Teacher Corner</h2>
+
+<div class="box">
+
+<input id="teacherPass" type="password" placeholder="Teacher Password">
+
+<button class="button" onclick="teacherLogin()">Enter</button>
+
+</div>
+
+<div id="teacherPanel" style="display:none">
+
+<h3>Add Student</h3>
+
+<input id="newStudent" placeholder="Student Name">
+<input id="newPass" placeholder="Password">
+
+<button class="button" onclick="addStudent()">Add Student</button>
+
+<h3>Upload Study Material</h3>
+
+<input id="materialTitle" placeholder="Material Title">
+<input id="materialLink" placeholder="File Link (Google Drive / PDF)">
+
+<button class="button" onclick="addMaterial()">Upload</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* STORAGE */
+
+let students=JSON.parse(localStorage.getItem("students")) || {}
+let materials=JSON.parse(localStorage.getItem("materials")) || []
+
+/* SCROLL */
+
+function scrollToStudent(){
+document.getElementById("student").scrollIntoView()
+}
+
+function scrollToTeacher(){
+document.getElementById("teacher").scrollIntoView()
+}
+
+/* STUDENT LOGIN */
+
+function studentLogin(){
+
+let name=document.getElementById("studentName").value
+let pass=document.getElementById("studentPass").value
+
+if(students[name]==pass){
+
+document.getElementById("studentArea").style.display="block"
+
+loadMaterials()
+
+}
+
+else{
+
+alert("Wrong login")
+
+}
+
+}
+
+/* TEACHER LOGIN */
+
+function teacherLogin(){
+
+let pass=document.getElementById("teacherPass").value
+
+if(pass==="HONESTY"){
+
+document.getElementById("teacherPanel").style.display="block"
+
+}
+
+else{
+
+alert("Wrong password")
+
+}
+
+}
+
+/* ADD STUDENT */
+
+function addStudent(){
+
+let name=document.getElementById("newStudent").value
+let pass=document.getElementById("newPass").value
+
+students[name]=pass
+
+localStorage.setItem("students",JSON.stringify(students))
+
+alert("Student Added")
+
+}
+
+/* ADD MATERIAL */
+
+function addMaterial(){
+
+let title=document.getElementById("materialTitle").value
+let link=document.getElementById("materialLink").value
+
+materials.push({title,link})
+
+localStorage.setItem("materials",JSON.stringify(materials))
+
+alert("Material Uploaded")
+
+}
+
+/* LOAD MATERIALS */
+
+function loadMaterials(){
+
+let container=document.getElementById("materials")
+
+container.innerHTML=""
+
+materials.forEach(m=>{
+
+container.innerHTML+=`<div class="material">
+<b>${m.title}</b>
+<br>
+<a href="${m.link}" target="_blank">Download</a>
+</div>`
+
+})
+
+}
+
+</script>
+
+</body>
+
+</html>
