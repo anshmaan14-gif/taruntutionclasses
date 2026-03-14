@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Tarun Classes</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Roboto;
+background:#f5f7fb;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:#0b1d3a;
+color:white;
+}
+
+nav h2{
+font-family:Montserrat;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+}
+
+.nav-btn{
+padding:8px 18px;
+border-radius:5px;
+border:none;
+cursor:pointer;
+}
+
+.signin{
+background:#ff7a18;
+color:white;
+}
+
+.join{
+background:transparent;
+border:1px solid white;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:80px 10%;
+background:linear-gradient(120deg,#0b1d3a,#1e3a8a);
+color:white;
+}
+
+.hero-text{
+max-width:500px;
+}
+
+.hero h1{
+font-family:Montserrat;
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.hero-buttons button{
+padding:12px 22px;
+margin-right:10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+transition:.3s;
+}
+
+.browse{
+background:#ff7a18;
+color:white;
+}
+
+.start{
+background:white;
+}
+
+.hero-buttons button:hover{
+transform:scale(1.05);
+}
+
+/* PROGRAMS */
+
+.section{
+padding:70px 10%;
+}
+
+.section h2{
+font-family:Montserrat;
+text-align:center;
+margin-bottom:10px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card button{
+margin-top:10px;
+padding:8px 15px;
+border:none;
+background:#2563EB;
+color:white;
+border-radius:5px;
+}
+
+/* WHY US */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+text-align:center;
+margin-top:40px;
+}
+
+.feature{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 8px 18px rgba(0,0,0,0.1);
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(#1e3a8a,#0b1d3a);
+color:white;
+text-align:center;
+padding:80px 10%;
+}
+
+.cta h2{
+font-family:Montserrat;
+font-size:36px;
+}
+
+.cta button{
+margin-top:20px;
+padding:15px 30px;
+background:#ff7a18;
+color:white;
+border:none;
+border-radius:6px;
+font-size:18px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#0b1d3a;
+color:white;
+padding:40px 10%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+display:block;
+margin:5px 0;
+}
+
+.copy{
+text-align:center;
+margin-top:20px;
+opacity:.7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<h2>Tarun Classes</h2>
+
+<div>
+<a href="#">Courses</a>
+<a href="#">Programs</a>
+<a href="#">Teachers</a>
+<a href="#">About</a>
+
+<button class="nav-btn signin">Sign In</button>
+<button class="nav-btn join">Join Now</button>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Level Up Your Learning</h1>
+
+<p>Advanced coaching & expert mentorship to help students succeed in Maths and Science.</p>
+
+<div class="hero-buttons">
+
+<button class="browse">Browse Courses</button>
+<button class="start">Get Started</button>
+
+</div>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1584697964190-1b7a1e63c1b4" width="420">
+
+</section>
+
+<!-- TOP PROGRAMS -->
+
+<section class="section">
+
+<h2>Our Top Programs</h2>
+<p style="text-align:center">Achieve Excellence in Your Studies</p>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1581090700227-1e8c5f0d8b9f">
+
+<div class="card-content">
+
+<h3>Maths Mastery</h3>
+
+<p>Concept-based problem solving.</p>
+
+<button>Learn More</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+
+<div class="card-content">
+
+<h3>Science Foundation</h3>
+
+<p>Physics, Chemistry fundamentals.</p>
+
+<button>Learn More</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+
+<div class="card-content">
+
+<h3>Board Exam Preparation</h3>
+
+<p>Score high in CBSE & State boards.</p>
+
+<button>Learn More</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY LEARN -->
+
+<section class="section">
+
+<h2>Why Learn With Us?</h2>
+
+<div class="features">
+
+<div class="feature">
+
+<h3>Expert Teachers</h3>
+<p>Learn from experienced mentors.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Practice Tests</h3>
+<p>Weekly tests improve performance.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Career Guidance</h3>
+<p>Guidance for exams and future goals.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Start Your Learning Journey Today</h2>
+
+<p>Join students improving their results every year.</p>
+
+<button>Join Now</button>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>Quick Links</h3>
+<a href="#">Courses</a>
+<a href="#">Programs</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+
+<div>
+<h3>Resources</h3>
+<a href="#">Study Material</a>
+<a href="#">Blog</a>
+<a href="#">Demo Class</a>
+</div>
+
+<div>
+<h3>Support</h3>
+<a href="#">Help Center</a>
+<a href="#">Student Support</a>
+</div>
+
+<div>
+<h3>Location</h3>
+<p>Tarun Classes<br>Faridkot, Punjab</p>
+</div>
+
+</div>
+
+<div class="copy">
+
+© 2026 Tarun Classes. All rights reserved.
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
